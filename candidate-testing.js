@@ -36,13 +36,13 @@ function gradeQuiz(candidateAnswer,correctAnswer) {
   if (candidateAnswer===correctAnswer.toLowerCase()){
   numberOfCorrectAnswers +=1
   
-    return ((grade=(numberOfCorrectAnswers/index)*100),(console.log(`Your Answer: ${candidateAnswer}\n Correct Answer: ${correctAnswer}`)));
+    return ((grade=numberOfCorrectAnswers),(console.log(`Your Answer: ${candidateAnswer}\n Correct Answer: ${correctAnswer}`)));
 
 }
-return ((grade=(numberOfCorrectAnswers/index)*100),
+return ((grade=numberOfCorrectAnswers),
  (console.log(`Your Answer: ${candidateAnswer} \n Correct Answer: ${correctAnswer}`)),
 grade);
-  return grades
+  return grade
 
 
 
@@ -64,9 +64,10 @@ candidateAnswers.push(candidateAnswer);
 gradeQuiz(candidateAnswers[i],correctAnswers[i])
 
 }
-if (grade<80){
-  console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} of 5 responses correct) \n>>> Status: Failed <<<`)
-  }else{console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} out of 5 responses correct)<<< \n>>> Status: Passed <<<`)}
+let findPercent=(grade/5)*100
+if (findPercent<80){
+  console.log(`>>> Overall Grade: ${findPercent}% (${numberOfCorrectAnswers} of 5 responses correct) \n>>> Status: Failed <<<`)
+  }else{console.log(`>>> Overall Grade: ${findPercent}% (${numberOfCorrectAnswers} out of 5 responses correct)<<< \n>>> Status: Passed <<<`)}
 
 
 
