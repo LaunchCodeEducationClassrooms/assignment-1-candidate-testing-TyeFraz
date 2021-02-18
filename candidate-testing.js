@@ -15,6 +15,11 @@ let numberOfCorrectAnswers=0
 let grade=0
 let index=questions.length
 
+for (i=0;i<correctAnswers.length;i++){
+ correctAnswers[i]=correctAnswers[i].toLowerCase()
+}
+
+
 function askForName(prompt) {
   // TODO 1.1b: Ask for candidate's name //
   let userInput=input.question(prompt);
@@ -33,7 +38,7 @@ function gradeQuiz(candidateAnswer,correctAnswer) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   
-  if (candidateAnswer===correctAnswer.toLowerCase()){
+  if (candidateAnswer===correctAnswer){
   numberOfCorrectAnswers +=1
   
     return ((grade=numberOfCorrectAnswers),(console.log(`Your Answer: ${candidateAnswer}\nCorrect Answer: ${correctAnswer}`)));
