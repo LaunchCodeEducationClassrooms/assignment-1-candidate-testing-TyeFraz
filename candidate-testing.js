@@ -14,11 +14,11 @@ let candidateAnswers=[];
 let numberOfCorrectAnswers=0
 let grade=0
 let index=questions.length
+let lowerCaseCorrectAnswers=[]
 
-for (i=0;i<correctAnswers.length;i++){
- correctAnswers[i]=correctAnswers[i].toLowerCase()
-}
-
+ for (i=0;i<correctAnswers.length;i++){
+ lowerCaseCorrectAnswers[i]=correctAnswers[i].toLowerCase()
+}console.log(lowerCaseCorrectAnswers)
 
 function askForName(prompt) {
   // TODO 1.1b: Ask for candidate's name //
@@ -34,18 +34,18 @@ return candidateAnswer.toLowerCase()
 };
 
 
-function gradeQuiz(candidateAnswer,correctAnswer) {
+function gradeQuiz(candidateAnswer,correctAnswer,lowerCaseCorrectAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  
-  if (candidateAnswer===correctAnswer){
+ 
+  if (candidateAnswer===lowerCaseCorrectAnswers){
   numberOfCorrectAnswers +=1
   
     return ((grade=(numberOfCorrectAnswers/5)*100),(console.log(`Your Answer: ${candidateAnswer}\nCorrect Answer: ${correctAnswer}`)));
 
 }
 return ((grade=(numberOfCorrectAnswers/5)*100),
- (console.log(`Your Answer: ${candidateAnswer} \nCorrect Answer: ${correctAnswer}`)),
+ (console.log(`Your Answer wrong: ${candidateAnswer} \nCorrect Answer: ${correctAnswer}`)),
 grade);
   return grade
 
@@ -65,7 +65,7 @@ function runProgram() {
 for (let i=0;i<index;i++){
 candidateAnswer=askQuestion(questions[i]);
 candidateAnswers.push(candidateAnswer);
-gradeQuiz(candidateAnswers[i],correctAnswers[i])
+gradeQuiz(candidateAnswers[i],correctAnswers[i],lowerCaseCorrectAnswers[i])
 
 }
 let findPercent=grade
