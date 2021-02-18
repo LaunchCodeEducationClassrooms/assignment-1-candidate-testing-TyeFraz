@@ -8,7 +8,7 @@ let candidateName=("");
 let question="Who was the first American woman in space?";
 let correctAnswer="Sally Ride";
 let candidateAnswer=("");
-let questions=["Who was the first American woman in space?","True or false: 5000 meters = 5 kilometers.","(5+3)/2*10=?", "Given The array [8,'Orbit','Trajectory',45]. what entry is at index 2?;","What is the minimum crew size for ISS?"]
+let questions=['1) Who was the first American woman in space?','2)True or false: 5000 meters == 5 kilometers?','3) (5+3)/2*10=?', '4)Given the array [8,"Orbit","Trajectory",45]. what entry is at index 2?','5) What is the minimum crew size for ISS?']
 let correctAnswers= ["Sally Ride","True","40","Trajectory","3"];
 let candidateAnswers=[];
 let numberOfCorrectAnswers=0
@@ -36,11 +36,11 @@ function gradeQuiz(candidateAnswer,correctAnswer) {
   if (candidateAnswer===correctAnswer.toLowerCase()){
   numberOfCorrectAnswers +=1
   
-    return ((grade=(numberOfCorrectAnswers/index)*100),(console.log(`Your Answer: ${candidateAnswer}\nThe Correct Answer: ${correctAnswer}.`)));
+    return ((grade=(numberOfCorrectAnswers/index)*100),(console.log(`Your Answer: ${candidateAnswer}\n Correct Answer: ${correctAnswer}`)));
 
 }
 return ((grade=(numberOfCorrectAnswers/index)*100),
- (console.log(`Your Answer: ${candidateAnswer} \nThe Correct Answer: ${correctAnswer}.`)),
+ (console.log(`Your Answer: ${candidateAnswer} \n Correct Answer: ${correctAnswer}`)),
 grade);
   return grades
 
@@ -54,7 +54,7 @@ grade);
 function runProgram() {
   canidateName=askForName("What is your name");
   // TODO 1.1c: Ask for candidate's name //
-  console.log(`Greetings ${canidateName}!`);
+  console.log(`Candidate Name: ${canidateName}`);
   
 
 
@@ -65,8 +65,8 @@ gradeQuiz(candidateAnswers[i],correctAnswers[i])
 
 }
 if (grade<80){
-  console.log(`Your grade is ${grade}%.(${numberOfCorrectAnswers} out of 5 correct answers) \nYou did not pass!`)
-  }else{console.log(`Your grade is ${grade}%. ${numberOfCorrectAnswers} out of 5 correct answers) \You Passed!`)}
+  console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} of 5 responses correct) \n>>> Status: Failed <<<`)
+  }else{console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} out of 5 responses correct)<<< \n>>> Status: Passed <<<`)}
 
 
 
