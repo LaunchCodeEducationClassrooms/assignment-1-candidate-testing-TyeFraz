@@ -58,13 +58,13 @@ function runProgram() {
   canidateName=askForName("What is your name");
   // TODO 1.1c: Ask for candidate's name //
   console.log(`Candidate Name: ${canidateName}`);
-  
+ 
 
 
 for (let i=0;i<index;i++){
 candidateAnswer=askQuestion(questions[i]);
 candidateAnswers.push(candidateAnswer);
-gradeQuiz(candidateAnswers[i],correctAnswers[i],lowerCaseCorrectAnswers[i])
+grade=gradeQuiz(candidateAnswers[i],correctAnswers[i],lowerCaseCorrectAnswers[i])
 
 }
 if (grade<80){
