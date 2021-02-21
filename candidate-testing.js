@@ -44,12 +44,11 @@ function gradeQuiz(candidateAnswers) {
   for(let i=0; i<index;i++){
   if (candidateAnswers[i]===lowerCaseCorrectAnswers[i]){
   numberOfCorrectAnswers +=1;
-  grade=(numberOfCorrectAnswers/5)*100;
-  console.log(`Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}`);
+    console.log(`Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}`);
   }else{
-console.log(`Your wrong: ${candidateAnswers[i]} \nCorrect Answer: ${correctAnswers[i]}`)};
+console.log(`Your Answer: ${candidateAnswers[i]} \nCorrect Answer: ${correctAnswers[i]}`)};
   }
-  
+  grade=(numberOfCorrectAnswers/5)*100;
   if (grade<80){
   console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} of 5 responses correct) \n>>> Status: Failed <<<`)
   }else{console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} out of 5 responses correct)<<< \n>>> Status: Passed <<<`)}
